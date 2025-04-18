@@ -1,0 +1,17 @@
+commands:
+  no-permission: "&cYou don't have permission to do that!"
+  player-only: "&cThis command can only be used by players!"
+  player-offline: "&cThat player is offline!"
+  invalid-usage: "&cInvalid usage! Use: %usage%"
+
+spawn:
+  set: "&aSpawn location has been set!"
+  teleported: "&aYou have been teleported to spawn!"
+  not-set: "&cSpawn location has not been set yet!"
+
+fly:
+  enabled: "&aFly mode enabled!"
+  disabled: "&cFly mode disabled!"
+
+heal:
+  healed: "&aYou have been healed!"

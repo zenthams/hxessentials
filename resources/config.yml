@@ -1,0 +1,17 @@
+settings:
+  prefix: "&e&lHXEssentials &a/"
+  spawn:
+    world: world
+    x: 0.0
+    y: 64.0
+    z: 0.0
+    yaw: 0.0
+    pitch: 0.0
+  chat:
+    locked: false
+    locked-message: "&cChat is currently locked!"
+
+messages:
+  no-permission: "You don't have permission!"
+  player-not-found: "Player not found!"
+  spawn-set: "Spawn point has been set!"

@@ -1,0 +1,164 @@
+name: HXEssentials
+version: '1.0'
+main: org.zenthams.hxessentials.HXEssentials
+api-version: '1.20'
+author: ZenthaMS
+description: EssentialX Lite Plugin
+website: https://github.com/zenthams
+commands:
+  hxessentials:
+    description: Main plugin command
+    aliases: [hx]
+    permission: hxessentials.admin
+    permission-message: "&cYou need permission &ehxessentials.admin &cto use this command!"
+
+  setspawn:
+    description: Set server spawn
+    permission: hxessentials.setspawn
+    permission-message: "&cYou need permission &ehxessentials.setspawn &cto use this command!"
+
+  spawn:
+    description: Teleport to spawn
+    permission: hxessentials.spawn
+    permission-message: "&cYou need permission &ehxessentials.spawn &cto use this command!"
+
+  gmc:
+    description: Change to creative mode
+    permission: hxessentials.gamemode.creative
+    permission-message: "&cYou need permission &ehxessentials.gamemode.creative &cto use this command!"
+
+  gms:
+    description: Change to survival mode
+    permission: hxessentials.gamemode.survival
+    permission-message: "&cYou need permission &ehxessentials.gamemode.survival &cto use this command!"
+
+  gmsp:
+    description: Change to spectator mode
+    permission: hxessentials.gamemode.spectator
+    permission-message: "&cYou need permission &ehxessentials.gamemode.spectator &cto use this command!"
+
+  gma:
+    description: Change to adventure mode
+    permission: hxessentials.gamemode.adventure
+    permission-message: "&cYou need permission &ehxessentials.gamemode.adventure &cto use this command!"
+
+  heal:
+    description: Heal yourself
+    permission: hxessentials.heal
+    permission-message: "&cYou need permission &ehxessentials.heal &cto use this command!"
+
+  fly:
+    description: Toggle fly mode
+    permission: hxessentials.fly
+    permission-message: "&cYou need permission &ehxessentials.fly &cto use this command!"
+
+  tp:
+    description: Teleport to player
+    permission: hxessentials.teleport
+    permission-message: "&cYou need permission &ehxessentials.teleport &cto use this command!"
+
+  invsee:
+    description: View player inventory
+    permission: hxessentials.invsee
+    permission-message: "&cYou need permission &ehxessentials.invsee &cto use this command!"
+
+  chatlock:
+    description: Lock the chat
+    permission: hxessentials.chatlock
+    permission-message: "&cYou need permission &ehxessentials.chatlock &cto use this command!"
+
+  whitelist:
+    description: Manage whitelist
+    permission: hxessentials.whitelist.manage
+    permission-message: "&cYou need permission &ehxessentials.whitelist.manage &cto use this command!"
+
+permissions:
+  hxessentials.admin:
+    description: Access to all HXEssentials commands
+    default: op
+    children:
+      hxessentials.*: true
+
+  hxessentials.*:
+    description: Wildcard permission for all commands
+    children:
+      hxessentials.setspawn: true
+      hxessentials.spawn: true
+      hxessentials.gamemode.*: true
+      hxessentials.heal: true
+      hxessentials.fly: true
+      hxessentials.teleport: true
+      hxessentials.invsee: true
+      hxessentials.chatlock: true
+      hxessentials.whitelist.*: true
+
+  hxessentials.setspawn:
+    description: Set the server spawn
+    default: false
+
+  hxessentials.spawn:
+    description: Teleport to spawn
+    default: true
+
+  hxessentials.gamemode.*:
+    description: Access to all gamemode commands
+    children:
+      hxessentials.gamemode.creative: true
+      hxessentials.gamemode.survival: true
+      hxessentials.gamemode.spectator: true
+      hxessentials.gamemode.adventure: true
+
+  hxessentials.gamemode.creative:
+    description: Change to creative mode
+    default: op
+
+  hxessentials.gamemode.survival:
+    description: Change to survival mode
+    default: true
+
+  hxessentials.gamemode.spectator:
+    description: Change to spectator mode
+    default: op
+
+  hxessentials.gamemode.adventure:
+    description: Change to adventure mode
+    default: op
+
+  hxessentials.heal:
+    description: Heal yourself or others
+    default: false
+
+  hxessentials.fly:
+    description: Enable fly mode
+    default: false
+
+  hxessentials.teleport:
+    description: Teleport to players
+    default: op
+
+  hxessentials.invsee:
+    description: View player inventories
+    default: op
+
+  hxessentials.chatlock:
+    description: Lock server chat
+    default: op
+
+  hxessentials.whitelist.*:
+    description: Manage whitelist
+    children:
+      hxessentials.whitelist.add: true
+      hxessentials.whitelist.remove: true
+      hxessentials.whitelist.list: true
+
+  hxessentials.whitelist.add:
+    description: Add players to whitelist
+    default: op
+
+  hxessentials.whitelist.remove:
+    description: Remove players from whitelist
+    default: op
+
+  hxessentials.whitelist.list:
+    description: View whitelisted players
+    default: true
